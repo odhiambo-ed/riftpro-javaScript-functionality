@@ -15,3 +15,7 @@ function openPopup(title, description) {
     popUp.style.display = 'flex';
 }
 
+function closePopup() {
+    const close = document.getElementById('detailsPopup');
+    close.style.display = 'none';
+}
