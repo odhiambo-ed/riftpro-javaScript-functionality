@@ -55,24 +55,36 @@ document.getElementById('portfolioContactForm').addEventListener('submit', funct
         document.getElementById('messageError').style.display = 'none';
     }
 
-    // Local Storage Preservation
+    // Local Storage Preservation and Display
     if (isValid) {
+        // Store form data
         localStorage.setItem('contactFormName', name.value);
         localStorage.setItem('contactFormEmail', email.value);
         localStorage.setItem('contactFormMessage', message.value);
+
+        // Display stored data
+        updateStoredDataDisplay();
 
         alert('Message sent successfully!');
         this.reset();
     }
 });
 
-// Restore Form Data from Local Storage on Page Load
-window.onload = function () {
-    const name = document.getElementById('name');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
+// Function to update displayed localStorage data
+function updateStoredDataDisplay() {
+    const storedDataContainer = document.getElementById('storedDataContainer');
 
-    name.value = localStorage.getItem('contactFormName') || '';
-    email.value = localStorage.getItem('contactFormEmail') || '';
-    message.value = localStorage.getItem('contactFormMessage') || '';
+    const storedName = localStorage.getItem('contactFormName');
+    const storedEmail = localStorage.getItem('contactFormEmail');
+    const storedMessage = localStorage.getItem('contactFormMessage');
+
+    if (storedName && storedEmail && storedMessage) {
+        storedDataContainer.innerHTML = `
+                    <p><strong>Name:</strong> ${storedName}</p>
+                    <p><strong>Email:</strong> ${storedEmail}</p>
+                    <p><strong>Message:</strong> ${storedMessage}</p>
+                `;
+    } else {
+        storedDataContainer.innerHTML = '<p>No data submitted yet.</p>';
+    }
 }
