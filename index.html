@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Features Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Mobile Menu -->
+  <header>
+    <button id="menu-toggle">☰ Menu</button>
+    <nav id="mobile-menu" class="hidden">
+      <ul>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="portfolio-item" data-details="Details about Project 1">
+      <h3>Project 1</h3>
+      <button class="details-btn">View Details</button>
+    </div>
+    <div class="portfolio-item" data-details="Details about Project 2">
+      <h3>Project 2</h3>
+      <button class="details-btn">View Details</button>
+    </div>
+  </section>
+
+  <!-- Popup Window -->
+  <div id="popup" class="hidden">
+    <div class="popup-content">
+      <span id="close-popup">&times;</span>
+      <p id="popup-details"></p>
+    </div>
+  </div>
+
+  <!-- Contact Form -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
