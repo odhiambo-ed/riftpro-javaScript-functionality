@@ -130,6 +130,13 @@
             display: none;
         }
 
+        .contact-form button {
+            background-color: #3498db;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+        }
+
         .local-storage-data {
             max-width: 500px;
             margin: 20px auto;
