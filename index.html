@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript Features Demo</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+   <link rel="stylesheet" href="./Styles/index.css">
 </head>
 <body>
-  <!-- Mobile Menu -->
-  <header>
-    <button id="menu-toggle">☰ Menu</button>
-    <nav id="mobile-menu" class="hidden">
-      <ul>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="header">
+        <nav class="nav-menu">
+            <h1>My Portfolio</h1>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Portfolio Section -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="portfolio-item" data-details="Details about Project 1">
-      <h3>Project 1</h3>
-      <button class="details-btn">View Details</button>
+    <section id="portfolio" class="portfolio">
+        <div class="portfolio-item" onclick="openPopup('Web Design Project', 'A comprehensive web design project showcasing responsive design techniques.')">
+            <img src="/api/placeholder/250/200" alt="Web Design Project">
+            <div class="portfolio-item-details">
+                <h3>Web Design Project</h3>
+                <p>Click to see details</p>
+            </div>
+        </div>
+        <div class="portfolio-item" onclick="openPopup('Mobile App Interface', 'User interface design for a mobile application with intuitive navigation.')">
+            <img src="/api/placeholder/250/200" alt="Mobile App Interface">
+            <div class="portfolio-item-details">
+                <h3>Mobile App Interface</h3>
+                <p>Click to see details</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-form">
+        <h2>Contact Me</h2>
+        <form id="portfolioContactForm">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <div id="nameError" class="form-error">Name is required</div>
+
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <div id="emailError" class="form-error">Please enter a valid email</div>
+
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <div id="messageError" class="form-error">Message is required</div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <div id="detailsPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h2 id="popupTitle"></h2>
+            <p id="popupDescription"></p>
+        </div>
     </div>
-    <div class="portfolio-item" data-details="Details about Project 2">
-      <h3>Project 2</h3>
-      <button class="details-btn">View Details</button>
-    </div>
-  </section>
-
-  <!-- Popup Window -->
-  <div id="popup" class="hidden">
-    <div class="popup-content">
-      <span id="close-popup">&times;</span>
-      <p id="popup-details"></p>
-    </div>
-  </div>
-
-  <!-- Contact Form -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
-      
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <script src="script.js"></script>
-  <script src="https://kit.fontawesome.com/46794738cc.js" crossorigin="anonymous"></script>
+<script src="./Scripts/index.js"></script>
 </body>
 </html>
