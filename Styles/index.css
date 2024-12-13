@@ -130,6 +130,24 @@
             display: none;
         }
 
+        .local-storage-data {
+            max-width: 500px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .local-storage-data h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .local-storage-data p {
+            margin: 5px 0;
+            word-break: break-word;
+        }
+
         /* Mobile Responsiveness */
         @media screen and (max-width: 768px) {
             .menu-toggle {
